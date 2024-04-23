@@ -20,7 +20,7 @@ Doorloop de volgende stappen om vanaf het internet een SSH connectie te kunnen m
 
 1. Start bij voorkeur Powershell. En anders command prompt(cmd.exe)
 2. Installeer de cloudflare connector. Deze zorgt ervoor dat je de connectie van buitenaf met de server kan maken
-```sh
+```PowerShell
 winget install --id cloudflare.cloudflared
 ```
 
@@ -35,7 +35,7 @@ notepad config
 ```
 
 4. Vervang de inhoud van config met het volgende, waarbij {x} je groepnummer is
-```java
+```Shell
 Host group4-terminal.webdeployment.nl
 ProxyCommand C:\Program Files (x86)\cloudflared\cloudflared.exe access ssh --hostname %h
 ```
