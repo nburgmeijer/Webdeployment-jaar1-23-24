@@ -35,7 +35,7 @@ notepad config
 ```
 
 4. Vervang de inhoud van config met het volgende, waarbij {x} je groepnummer is
-```shell
+```bash
 Host group4-terminal.webdeployment.nl
 ProxyCommand C:\Program Files (x86)\cloudflared\cloudflared.exe access ssh --hostname %h
 ```
