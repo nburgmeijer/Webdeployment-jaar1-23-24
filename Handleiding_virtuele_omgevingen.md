@@ -20,22 +20,34 @@ Doorloop de volgende stappen om vanaf het internet een SSH connectie te kunnen m
 
 1. Start bij voorkeur Powershell. En anders command prompt(cmd.exe)
 2. Installeer de cloudflare connector. Deze zorgt ervoor dat je de connectie van buitenaf met de server kan maken
-```PowerShell
+```ps
 winget install --id cloudflare.cloudflared
 ```
 
 2. Ga naar de .shh directory
-```sh
+```ps
 cd .ssh
 ```
 
 3. Voor het volgende uit om notepad te openen voor de file config 
-```sh
+```ps
 notepad config
 ```
 
-4. Vervang de inhoud van config met het volgende, waarbij {x} je groepnummer is
-```Shell
-Host group4-terminal.webdeployment.nl
+4. Vervang de inhoud van config met het volgende, waarbij {X} je groepnummer is
+```
+Host group{X}-terminal.webdeployment.nl
 ProxyCommand C:\Program Files (x86)\cloudflared\cloudflared.exe access ssh --hostname %h
 ```
+
+5. Nu kan je een SSH connectie maken met de server met het volgende commando, waarbij {X} je groepnummer is
+   - waarschijnlijk krijg je de melding dat de host nog niet bekend is en of je wil doorgaan met de aangegeven key fingerprint)
+   - Type dan 'y' of ' yes'
+   - Het standaard wachtwoord van de server is: 12345 
+```
+ssh ict@group{X}-terminal.webdeployment.nl
+```
+
+Nu zitten we in de zogenaamde shell van de linux server. 
+
+![image](https://github.com/nburgmeijer/Webdeployment-jaar1-23-24/assets/31646458/265cb628-64b6-4b41-af4d-1da325f9241f)
