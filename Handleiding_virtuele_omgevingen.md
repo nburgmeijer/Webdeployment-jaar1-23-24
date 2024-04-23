@@ -57,3 +57,58 @@ Nu zitten we in de zogenaamde shell van de linux server.
 ```sh
 passwd
 ```
+
+## Filebrowser
+
+Mocht het nodig zijn om files over te zetten naar de server dan kan dit via de webbased filebrowser.
+Deze kan je bereiken op het volgende adres, waarbij {X} je groepnummer is.
+```
+https://group{X}-files.webdeployment.nl
+```
+
+De standaar login is:
+Username: admin
+Password: admin
+
+Het wachtwoord kan je aanpassen in de webinterface.
+
+![alt text](image.png)
+
+## MySql Server en phpMyAdmin
+
+Op de server is een docker container actief met daarin een MySql server. Deze server is bereikbaar via localhost of 127.0.0.1 op poort 3306 (standaard poort voor database connecties)
+
+#### ConnectionString
+Maak gebruik van de volgende connectie string om vanuit C# Blazor connectie te maken:
+
+```csharp
+"Server=localhost;port=3306;Database={database naam};Uid=root;Pwd=Test@1234!"
+```
+
+#### phpMyAdmin
+Je kan deze database server managen via een webbased adminstratietool genaamd phpMyAdmin.
+Deze kan je bereiken op het volgende adres, waarbij {X} je groepnummer is
+```
+Group{X}-database.webdeployment.nl
+```
+
+De standaard login voor de database is net zoals in periode 3:
+
+Username: root
+Password: Test@1234!
+
+Je kan het wachtwoord veranderen door boven op de pagina op Server: 127.0.0.1 te klikken en dan op change password:
+
+![alt text](image-2.png)
+
+## Standaard docker containers
+
+
+
+Voor het volgende commando uit in de shell van de server om te zien welke docker containers momenteel actief zijn
+
+```
+docker ps
+```
+![alt text](image-1.png)
+
